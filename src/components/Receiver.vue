@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Receiver444',
+  name: 'Receiver',
   created() {
     this.emitter.on('message', this.receiveHandler);
     this.star2.on('message', this.receiveHandler2);

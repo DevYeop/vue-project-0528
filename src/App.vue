@@ -6,25 +6,29 @@ import CheckboxItem from '@/components/CheckboxItem.vue';
 import CheckboxItem from '@/components/CheckboxItem.vue';
 import InputName from '@/components/InputName.vue';
 import Sender from '@/components/Sender.vue';
-import Receiver111 from '@/components/Receiver.vue';
+import Receiver from '@/components/Receiver.vue';
+
 export default {
   name: 'App',
   // components: { CheckboxItem: CheckboxItem }, // 표준 프로퍼티
-  components: { CheckboxItem, InputName, Sender, Receiver: Receiver111 }, // 단축 프로퍼티 (Shorthand-property)
+  components: { CheckboxItem, InputName, Sender, Receiver }, // 단축 프로퍼티 (Shorthand-property)
   data() {
     return {
-      parentName: '',
+      parentName: '', // ㅋㅋㅋㅋ
+      nickName: '',
       items: [
-        { id: 1, name: 'BTS', checked: true },
-        { id: 2, name: 'Black Pink', checked: false },
-        { id: 3, name: 'EXO', checked: false },
-        { id: 4, name: 'ITZY', checked: false },
+        { id: 11, name: 'BTS', checked: true },
+        { id: 22, name: 'Black Pink', checked: false },
+        { id: 33, name: 'EXO', checked: false },
+        { id: 44, name: 'ITZY', checked: false },
       ],
     };
   },
   methods: {
     nameChangedHandler(e) {
-      this.parentName = e.name;
+      // { name: 'ㅋㅋㅋㅋ' }
+      this.parentName = e.name; //  'ㅋㅋㅋㅋ'
+      this.nickName = e.name; //  'ㅋㅋㅋㅋ'
     },
   },
 };
@@ -40,19 +44,27 @@ export default {
       :checked="item.checked"
     /> -->
     <!-- <CheckboxItem
+      class="m-5"
       v-for="(item, index) in items"
       :key="index"
+
       :name="item.name"
       :checked="item.checked"
     /> -->
-    <CheckboxItem v-for="item in items" :key="item.id" :item="item" />
+    <!-- <CheckboxItem
+      v-for="starcraft in items"
+      :key="starcraft.id"
+      :item="starcraft"
+    /> -->
+
     <InputName @nameChanged="nameChangedHandler" />
     <br />
     <h3>App 데이터 : {{ parentName }}</h3>
     <br />
-    <Sender />
+
+    <!-- <Sender />
     <hr />
-    <Receiver />
+    <Receiver /> -->
   </main>
 </template>
 
